@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"strconv"
 
 	"github.com/jroimartin/gocui"
 )
@@ -31,7 +32,8 @@ func layout(g *gocui.Gui) error {
 		if err != gocui.ErrUnknownView {
 			return err
 		}
-		fmt.Fprintln(v, "Hello world!")
+		fmt.Fprintln(v, "X: "+strconv.Itoa(maxX)+" Y: "+strconv.Itoa(maxY))
+		v.Title = " Test "
 	}
 	return nil
 }
